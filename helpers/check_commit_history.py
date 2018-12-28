@@ -25,9 +25,9 @@ def is_commit_message_line_length_valid(commit_message):
         continue
     return True
 
-def check_commit_history(project_path, branch_name=None):
+def check_commit_history(project_path, branch_name='master'):
     repo = git.Repo(project_path)
-    commits = list(repo.iter_commits(branch_name or 'master'))
+    commits = list(repo.iter_commits(branch_name))
     for commit in commits:
         if not is_commit_summary_length_valid(commit.summary):
             print('%s %s' % (colored('ERROR:', 'red'), 'Commit summary length is too long.'))

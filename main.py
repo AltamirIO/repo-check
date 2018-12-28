@@ -18,7 +18,7 @@ def main():
 
     args = parser.parse_args()
 
-    project_path = clone_git(args.repo)
+    project_path = clone_git(args.repo, args.branch)
 
     helpers.check_commit_history.check_commit_history(project_path, args.branch)
 
