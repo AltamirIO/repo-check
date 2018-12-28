@@ -2,8 +2,8 @@ import git
 from termcolor import colored
 from time import ctime
 
-max_commit_summary_length = 50
-max_commit_line_length = 50
+max_commit_summary_length = 72
+max_commit_line_length = 72
 
 def get_git_commit_history(project_path, branch=None):
     repo = git.Repo(project_path)
